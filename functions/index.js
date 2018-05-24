@@ -38,8 +38,8 @@ app.post('/singletypes', (req,res)=>{
   getDatafromFirebase(myRef, producttype).then((data)=>{
 
       getArrayFromFirebaseData(data).then((array) =>{
-        console.log(array);
-        // res.render('singletype', {producttypes: array});
+        
+        res.render('singletype', {producttypes: array});
 
       });
       

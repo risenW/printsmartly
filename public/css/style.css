@@ -1467,13 +1467,15 @@ button.w3view-cart {
     padding-bottom: 20px;
 }
 .men-thumb-item {
-    position: relative;
+	position: relative;
+	max-width: 400;
+	max-height: 300;
 }
 .item-info-product {
     text-align: center;
 }
 .my-single-product-text{
-	margin-top: 100px;
+	margin-top: 20px;
 	/* margin:500px 0 0; */
 	padding: 5px;
 }
