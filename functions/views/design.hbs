@@ -1,0 +1,30 @@
+<div id="products" class="new_arrivals_agile_w3ls_info"> 
+	<div class="container">
+		    <h3 class="wthree_text_info">Select a <span>Design</span></h3>
+            {{#each productdesigns}}	
+            <div class="col-md-4 product-men">
+                <div class="men-pro-item simpleCart_shelfItem">
+                    <div class="men-thumb-item">
+                        <a href="/banners"></a><img src="{{imagesrc}}" alt=""> </a>
+                        <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a href="/banners" class="link-product-add-cart">See types</a>
+                                </div>
+                        </div>                                                                             
+                    </div>
+                    <div class="item-info-product ">
+                        <h4><a href="/banners">{{title}}</a></h4>
+                        <div class="info-product-price">
+                            <span class="item_price">{{tag}}</span>
+                            
+                        </div>
+                        <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                            <a href="/banners"><input type="submit" name="submit" value="Order this item" class="button text-center" /></a>
+                        </div>
+                                                            
+                    </div>
+                </div>
+			</div>
+            {{/each}}
+    </div>
+</div>    
