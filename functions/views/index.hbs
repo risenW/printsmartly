@@ -90,9 +90,13 @@
                             <span class="item_price">$3,299</span>
                             <del>$4,299</del>
                         </div>
-                        <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                            <a href="/banners"><input type="submit" name="submit" value="Order this item" class="button text-center" /></a>
-                        </div>
+
+                        <form action="/singletypes" method="POST">
+                            <div class="form-group">
+                                    <input name="producttype" type="text" class="hidden" value="banners" id="producttype">
+                                    <button type="submit" class="btn btn-success btn-lg">Place Order Now</button>
+                            </div>
+                        </form>
                                                             
                     </div>
                 </div>
@@ -101,23 +105,26 @@
             <div class="col-md-4 product-men">
                 <div class="men-pro-item simpleCart_shelfItem">
                     <div class="men-thumb-item">
-                        <a href="/single/bizcard"></a><img src="images/m1.jpg" alt="" class="pro-image-front"> </a>
-                        <a href="/single/bizcard"></a><img src="images/m1.jpg" alt="" class="pro-image-back"> </a>
+                        <a href="/bizcard"></a><img src="images/m1.jpg" alt="" class="pro-image-front"> </a>
+                        <a href="/bizcard"></a><img src="images/m1.jpg" alt="" class="pro-image-back"> </a>
                         <div class="men-cart-pro">
                                 <div class="inner-men-cart-pro">
-                                    <a href="/single/bizcard" class="link-product-add-cart">See types</a>
+                                    <a href="/bizcard" class="link-product-add-cart">See types</a>
                                 </div>
                         </div>                                                                             
                     </div>
                     <div class="item-info-product ">
-                        <h4><a href="/single/bizcard">Business Cards</a></h4>
+                        <h4><a href="/bizcard">Business Cards</a></h4>
                         <div class="info-product-price">
                             <span class="item_price">$3,299</span>
                             <del>$4,299</del>
                         </div>
-                        <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                            <a href="/single/bizcard"><input type="submit" name="submit" value="Order this item" class="button" /></a>
-                        </div>
+                        <form action="/singletypes" method="POST">
+                            <div class="form-group">
+                                    <input name="producttype" type="text" class="hidden" value="bizcards" id="producttype">
+                                    <button type="submit" class="btn btn-success btn-lg">Place Order Now</button>
+                            </div>
+                        </form>
                                                             
                     </div>
                 </div>
