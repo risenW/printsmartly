@@ -9,6 +9,8 @@ const firebase = require('firebase-admin');
 
 //Routes 
 const routes = require('./routes/helper');
+//helper functions
+const myFunctions = require('./routes/functions');
 
 const firebaseApp = firebase.initializeApp(
   functions.config().firebase
@@ -35,9 +37,9 @@ app.post('/singletypes', (req,res)=>{
   console.log("received :" + producttype);
   var myRef = firebaseApp.database().ref('Products').child('Single_product_type').child(producttype);
 
-  getDatafromFirebase(myRef, producttype).then((data)=>{
+  myFunctions.getDatafromFirebase(myRef, producttype).then((data)=>{
 
-      getArrayFromFirebaseData(data).then((array) =>{
+    myFunctions.getArrayFromFirebaseData(data).then((array) =>{
         
         res.render('singletype', {producttypes: array});
 
@@ -49,15 +51,17 @@ app.post('/singletypes', (req,res)=>{
 
 });
 
-//Single product designs
+
+
+// Single product designs
 app.post('/designs', (req,res)=>{
   var productdesign = req.body.productdesign;
   console.log("received :" + productdesign);
   var myRef = firebaseApp.database().ref('Products').child('Designs').child(productdesign);
 
-  getDatafromFirebase(myRef, productdesign).then((data)=>{
+  myFunctions.getDatafromFirebase(myRef, productdesign).then((data)=>{
       console.log(data);
-      getArrayFromFirebaseData(data).then((array) =>{
+      myFunctions.getArrayFromFirebaseData(data).then((array) =>{
 
         res.render('design', {productdesigns: array});
 
@@ -68,8 +72,6 @@ app.post('/designs', (req,res)=>{
   });
 
 });
-
-
 
 
 // app.get('/seeder', (req,res)=>{
@@ -129,35 +131,6 @@ app.get('/banners', routes.banners);
 
 //Any other page not listed up above renders an error
 app.get('**', routes.errorpage)
-
-
-function getDatafromFirebase(db_reference,productdesign){
-  return new Promise((resolve,reject)=>{
-
-      db_reference.once("value").then((snapshot) => {
-          var data = snapshot.val();
-          resolve(data); 
-
-      }).catch((err)=>{
-
-          reject(err);
-      });
-  })
-}
-
-function getArrayFromFirebaseData(object_data){
-  return new Promise((resolve,reject)=>{
-    var keys = Object.keys(object_data);
-    var array_of_productdesigns = []
-    
-    for(var i = 0; i < keys.length; i++){
-      var key = keys[i];
-      array_of_productdesigns.push(object_data[key]);
-    }
-    resolve(array_of_productdesigns);
-
-  });
-}
 
 
 exports.app = functions.https.onRequest(app);

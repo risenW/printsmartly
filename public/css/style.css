@@ -1353,7 +1353,8 @@ position:relative;
     margin-top: 35px;
 }
 .product-men img {
-    width: 100%;
+	width: 370px;
+	height: 500px;
 }
 /*-- //new_arrivals --*/
 /*-- Shopping-Cart-PopUp --*/
@@ -1475,7 +1476,7 @@ button.w3view-cart {
     text-align: center;
 }
 .my-single-product-text{
-	margin-top: 20px;
+	margin-top: 200px;
 	/* margin:500px 0 0; */
 	padding: 5px;
 }
